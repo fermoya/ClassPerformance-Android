@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ClasPerformanceTheme">
+        <item name="android:paddingStart">8dip</item>
+        <item name="android:paddingLeft">8dip</item>
+        <item name="android:paddingEnd">8dip</item>
+        <item name="android:paddingRight">8dip</item>
+    </style>
+
 </resources>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ClassPerformance</string>
+    <string name="button_login_text">Log in</string>
+    <string name="button_sign_up_text">Sign Up</string>
+    <string name="edit_text_password_hint">Password</string>
+    <string name="edit_text_email_hint">Email</string>
 </resources>
