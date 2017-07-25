@@ -5,20 +5,20 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.fmoyader.classperformance.R;
+import com.example.fmoyader.classperformance.presenters.LogInContract;
 import com.example.fmoyader.classperformance.presenters.LogInPresenter;
-import com.example.fmoyader.classperformance.presenters.LogInPresenterImpl;
 import com.example.fmoyader.classperformance.presenters.LogInView;
 
-public class LogInActivity extends AppCompatActivity implements LogInView{
+public class LogInActivity extends AppCompatActivity implements LogInContract.View{
 
-    private LogInPresenter presenter;
+    private LogInContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        presenter = new LogInPresenterImpl(this);
+        presenter = new LogInPresenter(this);
     }
 
     public void logInFacebook(View v) {
