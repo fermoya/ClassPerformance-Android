@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.fmoyader.classperformance.activities.SignUpActivity"
+    style="@style/ClasPerformanceTheme">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_horizontal_half"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="@dimen/percent_half"/>
+
+    <EditText
+        android:id="@+id/edit_text_email"
+        android:layout_width="@dimen/dp_unespecified"
+        android:hint="@string/edit_text_email_hint"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/edit_text_password"
+        app:layout_constraintStart_toStartOf="@id/edit_text_password"
+        app:layout_constraintEnd_toEndOf="@id/edit_text_password"/>
+
+    <EditText
+        android:id="@+id/edit_text_password"
+        android:hint="@string/edit_text_password_hint"
+        android:layout_width="@dimen/dp_unespecified"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_half"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/edit_text_confirm_password"
+        android:hint="@string/edit_text_confirm_password_hint"
+        android:layout_width="@dimen/dp_unespecified"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_password"
+        app:layout_constraintStart_toStartOf="@id/edit_text_password"
+        app:layout_constraintEnd_toEndOf="@id/edit_text_password"/>
+
+    <Button
+        android:layout_width="@dimen/dp_unespecified"
+        android:layout_height="wrap_content"
+        android:text="@string/button_sign_up_text"
+        android:onClick="onSignUp"
+        app:layout_constraintStart_toStartOf="@id/edit_text_password"
+        app:layout_constraintEnd_toEndOf="@id/edit_text_password"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_confirm_password"/>
+
+</android.support.constraint.ConstraintLayout>

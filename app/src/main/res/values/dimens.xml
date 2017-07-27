@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dp_unespecified">0dp</dimen>
+    <dimen name="percent_half">0.5</dimen>
+    <dimen name="percent_one_third">0.333</dimen>
+    <dimen name="percent_two_thirds">0.666</dimen>
+</resources>

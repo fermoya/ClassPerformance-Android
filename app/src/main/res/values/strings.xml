@@ -1,7 +1,29 @@
 <resources>
     <string name="app_name">ClassPerformance</string>
+
+    <!-- Facebook Configuration -->
+    <string name="facebook_app_id">117998025495360</string>
+    <string name="fb_login_protocol_scheme">fb117998025495360</string>
+
+    <!-- LogInActivity layout -->
     <string name="button_login_text">Log in</string>
     <string name="button_sign_up_text">Sign Up</string>
     <string name="edit_text_password_hint">Password</string>
     <string name="edit_text_email_hint">Email</string>
+
+    <!-- Error Alert -->
+    <string name="alert_dialog_error_title">Error</string>
+    <string name="alert_dialog_error_positive_button">OK</string>
+    <string name="alert_dialog_error_unexpected_error">Unexpected error</string>
+
+    <!-- Log Out Alert -->
+    <string name="alert_dialog_logout_title">Log Out</string>
+    <string name="alert_dialog_logout_message">Are you sure you want to log out?</string>
+    <string name="alert_dialog_logout_positive_button">@string/alert_dialog_error_positive_button</string>
+    <string name="alert_dialog_logout_negative_button">Cancel</string>
+
+    <!-- CoursesActivity layout -->
+    <string name="activity_courses_title">Courses</string>
+    <string name="edit_text_confirm_password_hint">Confirm password</string>
+
 </resources>
