@@ -1,10 +1,11 @@
-package com.example.fmoyader.classperformance.presenters;
+package com.example.fmoyader.classperformance.presenter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.example.fmoyader.classperformance.R;
-import com.example.fmoyader.classperformance.activities.CoursesActivity;
+import com.example.fmoyader.classperformance.activitiy.CoursesActivity;
+import com.example.fmoyader.classperformance.presenter.contract.CoursesContract;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -61,7 +62,6 @@ public class CoursesPresenter implements CoursesContract.Presenter, GoogleApiCli
 
     @Override
     public void onLogOut() {
-        //TODO: logout logic
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser != null) {
             if (currentUser.getProviderData() != null && !currentUser.getProviderData().isEmpty()) {

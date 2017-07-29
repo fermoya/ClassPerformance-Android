@@ -1,4 +1,4 @@
-package com.example.fmoyader.classperformance.presenters;
+package com.example.fmoyader.classperformance.presenter.contract;
 
 /**
  * Created by fmoyader on 26/7/17.

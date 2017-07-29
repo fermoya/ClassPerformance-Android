@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="dp_unespecified">0dp</dimen>
-    <dimen name="percent_half">0.5</dimen>
-    <dimen name="percent_one_third">0.333</dimen>
-    <dimen name="percent_two_thirds">0.666</dimen>
+    <dimen name="progress_bar_width">60dp</dimen>
+    <dimen name="progress_bar_height">@dimen/progress_bar_width</dimen>
+    <dimen name="button_social_network_width">48dp</dimen>
+    <dimen name="button_social_network_height">@dimen/button_social_network_width</dimen>
 </resources>

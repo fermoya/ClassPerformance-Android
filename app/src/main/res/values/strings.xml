@@ -14,7 +14,6 @@
     <!-- Error Alert -->
     <string name="alert_dialog_error_title">Error</string>
     <string name="alert_dialog_error_positive_button">OK</string>
-    <string name="alert_dialog_error_unexpected_error">Unexpected error</string>
 
     <!-- Log Out Alert -->
     <string name="alert_dialog_logout_title">Log Out</string>
@@ -25,5 +24,10 @@
     <!-- CoursesActivity layout -->
     <string name="activity_courses_title">Courses</string>
     <string name="edit_text_confirm_password_hint">Confirm password</string>
+
+    <!-- Error -->
+    <string name="error_unexpected_error">Unexpected error</string>
+    <string name="error_invalid_data">The data is not valid, please fill the boxes</string>
+    <string name="error_invalid_password_confirmation">Both passwords are diferent</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.example.fmoyader.classperformance.activities;
+package com.example.fmoyader.classperformance.activitiy;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,8 +9,8 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 
 import com.example.fmoyader.classperformance.R;
-import com.example.fmoyader.classperformance.presenters.CoursesContract;
-import com.example.fmoyader.classperformance.presenters.CoursesPresenter;
+import com.example.fmoyader.classperformance.presenter.contract.CoursesContract;
+import com.example.fmoyader.classperformance.presenter.CoursesPresenter;
 
 public class CoursesActivity extends AppCompatActivity implements CoursesContract.View {
 

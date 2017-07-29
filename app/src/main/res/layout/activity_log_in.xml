@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.fmoyader.classperformance.activities.LogInActivity"
+    tools:context="com.example.fmoyader.classperformance.activitiy.LogInActivity"
     style="@style/ClasPerformanceTheme">
 
     <android.support.constraint.Guideline
@@ -12,80 +12,89 @@
         android:layout_height="wrap_content"
         android:id="@+id/guideline_vertical_third"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.333" />
+        app:layout_constraintGuide_percent="0.333"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="123dp" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/guideline_vertical_two_thirds"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.666" />
+        app:layout_constraintGuide_percent="0.666"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="245dp" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/guideline_horizontal_third"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.333" />
+        app:layout_constraintGuide_percent="0.333"
+        tools:layout_editor_absoluteY="170dp"
+        tools:layout_editor_absoluteX="0dp" />
 
     <ImageButton
         android:id="@+id/image_view_facebook"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/button_social_network_width"
+        android:layout_height="@dimen/button_social_network_height"
         android:scaleType="fitCenter"
         android:src="@drawable/facebook"
         android:background="@color/transparent"
         android:onClick="onLogInWithFacebook"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal_third"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/guideline_vertical_third"/>
+        app:layout_constraintRight_toLeftOf="@+id/guideline_vertical_third"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_third" />
 
     <ImageButton
         android:id="@+id/image_view_twitter"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/button_social_network_width"
+        android:layout_height="@dimen/button_social_network_height"
         android:scaleType="fitCenter"
         android:src="@drawable/twitter"
         android:background="@color/transparent"
         android:onClick="onLogInWithTwitter"
-        app:layout_constraintLeft_toRightOf="@id/guideline_vertical_third"
-        app:layout_constraintRight_toLeftOf="@id/guideline_vertical_two_thirds"
-        app:layout_constraintTop_toTopOf="@id/image_view_facebook"
-        app:layout_constraintBottom_toBottomOf="@id/image_view_facebook"/>
+        app:layout_constraintRight_toLeftOf="@+id/guideline_vertical_two_thirds"
+        app:layout_constraintTop_toTopOf="@+id/image_view_facebook"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view_facebook"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline_vertical_third" />
 
     <ImageButton
         android:id="@+id/image_view_google"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/button_social_network_width"
+        android:layout_height="@dimen/button_social_network_height"
         android:scaleType="fitCenter"
         android:src="@drawable/google_plus"
         android:background="@color/transparent"
         android:onClick="onLogInWithGoogle"
-        app:layout_constraintLeft_toRightOf="@id/guideline_vertical_two_thirds"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/image_view_facebook"
-        app:layout_constraintBottom_toBottomOf="@id/image_view_facebook"/>
+        app:layout_constraintTop_toTopOf="@+id/image_view_facebook"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view_facebook"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline_vertical_two_thirds" />
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dp_unespecified"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="@id/guideline_horizontal_third"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_third"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
         <EditText
             android:id="@+id/edit_text_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
             android:hint="@string/edit_text_email_hint"/>
 
         <EditText
             android:id="@+id/edit_text_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:hint="@string/edit_text_password_hint" />
 
         <Button
@@ -99,7 +108,7 @@
             android:id="@+id/button_sign_up"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick=""
+            android:onClick="onSignUpWithEmail"
             android:text="@string/button_sign_up_text"/>
 
     </LinearLayout>

@@ -34,7 +34,7 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.LogInActivity">
+        <activity android:name=".activitiy.LogInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,13 +42,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.CoursesActivity"
-            android:parentActivityName=".activities.LogInActivity">
+            android:name=".activitiy.CoursesActivity"
+            android:parentActivityName=".activitiy.LogInActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.LogInActivity" />
+                android:value=".activitiy.LogInActivity" />
         </activity>
-        <activity android:name=".activities.SignUpActivity"></activity>
+        <activity android:name=".activitiy.SignUpActivity"></activity>
     </application>
 
 </manifest>
