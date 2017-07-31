@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="dp_unespecified">0dp</dimen>
+    <dimen name="standard_margin">8dp</dimen>
     <dimen name="progress_bar_width">60dp</dimen>
     <dimen name="progress_bar_height">@dimen/progress_bar_width</dimen>
     <dimen name="button_social_network_width">48dp</dimen>
     <dimen name="button_social_network_height">@dimen/button_social_network_width</dimen>
+    <dimen name="add_icon_width">48dp</dimen>
+    <dimen name="floating_button_margin">16dp</dimen>
+    <dimen name="add_icon_height">@dimen/add_icon_width</dimen>
+    <dimen name="recycler_view_courses_margin">24dp</dimen>
 </resources>

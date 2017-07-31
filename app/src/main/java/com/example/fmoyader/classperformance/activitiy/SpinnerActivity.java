@@ -16,7 +16,7 @@ import com.example.fmoyader.classperformance.utils.Spinnable;
  * Created by fmoyader on 28/7/17.
  */
 
-public class SpinnerActivity extends AppCompatActivity implements Spinnable{
+public class SpinnerActivity extends ShowErrorActivity implements Spinnable{
 
     private ViewGroup spinnerView;
 

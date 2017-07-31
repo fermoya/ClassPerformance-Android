@@ -4,6 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.facebook.FacebookSdk;
+import com.google.firebase.database.FirebaseDatabase;
 import com.twitter.sdk.android.core.DefaultLogger;
 import com.twitter.sdk.android.core.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
@@ -24,5 +25,6 @@ public class ClassPerformanceApplication extends Application {
                 .debug(true)
                 .build();
         Twitter.initialize(config);
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
     }
 }

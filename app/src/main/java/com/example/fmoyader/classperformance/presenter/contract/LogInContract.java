@@ -2,6 +2,7 @@ package com.example.fmoyader.classperformance.presenter.contract;
 
 import android.content.Intent;
 
+import com.example.fmoyader.classperformance.utils.ErrorAlertDisplay;
 import com.example.fmoyader.classperformance.utils.Spinnable;
 
 /**
@@ -19,9 +20,7 @@ public interface LogInContract {
         void onSignUpWithEmail();
     }
 
-    interface View extends Spinnable {
-        void onShowError();
-        void onShowError(String errorMessage);
+    interface View extends Spinnable, ErrorAlertDisplay {
         void onStartActivityForResult(Intent intent, int requestCode);
         void onStartActivity(Intent intent);
         boolean dataIsNotEmpty();

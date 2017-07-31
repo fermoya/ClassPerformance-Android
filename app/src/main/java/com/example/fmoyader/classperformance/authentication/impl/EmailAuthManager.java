@@ -23,6 +23,8 @@ public class EmailAuthManager extends AuthManager {
     private String password;
     private Activity activity;
 
+    public EmailAuthManager() { }
+
     public EmailAuthManager(
             Context context, AuthProcessListener listener,
             String email, String password, Activity activity) {

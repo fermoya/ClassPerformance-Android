@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style="@style/ClasPerformanceTheme"
     tools:context="com.example.fmoyader.classperformance.activitiy.CoursesActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_courses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/text_view_empty_courses"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="45sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/standard_margin"
+            android:layout_marginEnd="@dimen/standard_margin"
+            android:text="@string/text_view_courses_empty_view"/>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floating_button_new_course"
+        android:layout_width="@dimen/add_icon_width"
+        android:layout_height="@dimen/add_icon_height"
+        android:layout_margin="@dimen/floating_button_margin"
+        android:clickable="true"
+        android:onClick="addNewCourse"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:src="@drawable/add_icon"
+        app:layout_anchor="@id/text_view_empty_courses"
+        app:layout_anchorGravity="bottom|right|end"/>
+
+
+</android.support.design.widget.CoordinatorLayout>

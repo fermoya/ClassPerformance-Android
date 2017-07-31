@@ -2,7 +2,9 @@ package com.example.fmoyader.classperformance.authentication.impl;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 
 import com.example.fmoyader.classperformance.R;
@@ -52,11 +54,6 @@ public class GoogleAuthManager extends AuthManager implements GoogleApiClient.On
     }
 
     @Override
-    public @AuthProvider String getProvider() {
-        return this.provider;
-    }
-
-    @Override
     public void logIn() {
         if (googleApiClient.isConnected()) {
             Auth.GoogleSignInApi.silentSignIn(googleApiClient).setResultCallback(new ResultCallback<GoogleSignInResult>() {
@@ -102,7 +99,18 @@ public class GoogleAuthManager extends AuthManager implements GoogleApiClient.On
             googleApiClient.connect();
         }
 
-        Auth.GoogleSignInApi.signOut(googleApiClient);
+        googleApiClient.registerConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
+            @Override
+            public void onConnected(@Nullable Bundle bundle) {
+                Auth.GoogleSignInApi.signOut(googleApiClient);
+            }
+
+            @Override
+            public void onConnectionSuspended(int i) {
+
+            }
+        });
+
     }
 
     @Override

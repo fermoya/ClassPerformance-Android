@@ -21,7 +21,9 @@ public abstract class AuthManager {
 
     protected Context context;
     protected AuthProcessListener listener;
-    protected final @AuthProvider String provider;
+    protected @AuthProvider String provider;
+
+    public AuthManager() {  }
 
     public AuthManager(Context context, AuthProcessListener listener, @AuthProvider String provider) {
         this.context = context;
@@ -29,17 +31,48 @@ public abstract class AuthManager {
         this.provider = provider;
     }
 
+    public static String getaAuthenticatedUserId() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (user != null) {
+            return user.getUid();
+        }
+
+        return null;
+    }
+
     public abstract void logIn();
 
     public abstract void onActivityResult(int requestCode, int resultCode, Intent data);
 
     public static boolean isConnected() {
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        return currentUser != null;
+        return getFirebaseUser() != null;
     }
 
-    public @AuthProvider String getProvider() {
-        return this.provider;
+    private static FirebaseUser getFirebaseUser() {
+        return FirebaseAuth.getInstance().getCurrentUser();
+    }
+
+    public static @AuthProvider String getProvider() {
+        if (isConnected()) {
+            FirebaseUser currentUser = getFirebaseUser();
+            if (currentUser.getProviderData() != null && !currentUser.getProviderData().isEmpty()) {
+                int lastIndex = currentUser.getProviderData().size() - 1;
+                String providerId = currentUser.getProviderData().get(lastIndex).getProviderId();
+                switch (providerId) {
+                    case AuthProvider.GOOGLE_API:
+                        return AuthProvider.GOOGLE_API;
+                    case AuthProvider.TWITTER_API:
+                        return AuthProvider.TWITTER_API;
+                    case AuthProvider.FACEBOOK_API:
+                        return AuthProvider.FACEBOOK_API;
+                    default:
+                        return AuthProvider.EMAIL_API;
+                }
+            }
+        }
+
+        return AuthProvider.NONE;
     }
 
     public void logInFirebase(AuthCredential credential) {

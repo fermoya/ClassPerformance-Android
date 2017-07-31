@@ -31,6 +31,8 @@ public class FacebookAuthManager extends AuthManager {
 
     private static final List<String> PERMISSIONS = Arrays.asList("public_profile", "email", "user_friends");
 
+    public FacebookAuthManager() { }
+
     public FacebookAuthManager(AuthProcessListener listener, Context context, Activity activity) {
         super(context, listener, AuthProvider.FACEBOOK_API);
         this.activity = activity;

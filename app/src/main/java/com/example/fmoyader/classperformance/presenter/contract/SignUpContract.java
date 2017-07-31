@@ -2,6 +2,7 @@ package com.example.fmoyader.classperformance.presenter.contract;
 
 import android.content.Intent;
 
+import com.example.fmoyader.classperformance.utils.ErrorAlertDisplay;
 import com.example.fmoyader.classperformance.utils.Spinnable;
 
 /**
@@ -13,10 +14,9 @@ public interface SignUpContract {
         void onSignUp();
     }
 
-    interface View extends Spinnable {
+    interface View extends Spinnable, ErrorAlertDisplay {
         boolean dataIsNotEmpty();
         boolean passwordIsValid();
-        void onShowError(String errorMessage);
         String getEmail();
         String getPassword();
         String getPasswordConfirmation();

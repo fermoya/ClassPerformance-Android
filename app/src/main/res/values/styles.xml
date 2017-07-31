@@ -9,10 +9,10 @@
     </style>
 
     <style name="ClasPerformanceTheme">
-        <item name="android:paddingStart">8dip</item>
-        <item name="android:paddingLeft">8dip</item>
-        <item name="android:paddingEnd">8dip</item>
-        <item name="android:paddingRight">8dip</item>
+        <item name="android:paddingStart">@dimen/standard_margin</item>
+        <item name="android:paddingLeft">@dimen/standard_margin</item>
+        <item name="android:paddingEnd">@dimen/standard_margin</item>
+        <item name="android:paddingRight">@dimen/standard_margin</item>
     </style>
 
 </resources>

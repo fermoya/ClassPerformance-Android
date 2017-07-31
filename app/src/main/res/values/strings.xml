@@ -24,10 +24,16 @@
     <!-- CoursesActivity layout -->
     <string name="activity_courses_title">Courses</string>
     <string name="edit_text_confirm_password_hint">Confirm password</string>
+    <string name="text_view_courses_empty_view">You don\'t have any courses tap to add one</string>
 
     <!-- Error -->
     <string name="error_unexpected_error">Unexpected error</string>
     <string name="error_invalid_data">The data is not valid, please fill the boxes</string>
     <string name="error_invalid_password_confirmation">Both passwords are diferent</string>
+
+    <!-- Add New Course Activity -->
+    <string name="edit_text_course_name">Name</string>
+    <string name="edit_text_course_description">Description</string>
+    <string name="button_add_course">Add Course</string>
 
 </resources>

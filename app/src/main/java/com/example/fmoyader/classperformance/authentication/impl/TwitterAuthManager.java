@@ -27,14 +27,11 @@ public class TwitterAuthManager extends AuthManager {
     private TwitterAuthClient twitterAuthClient;
     private Activity activity;
 
+    public TwitterAuthManager() { }
+
     public TwitterAuthManager(AuthProcessListener listener, Context context, Activity activity) {
         super(context, listener, AuthProvider.TWITTER_API);
         this.activity = activity;
-    }
-
-    @Override
-    public @AuthProvider String getProvider() {
-        return this.provider;
     }
 
     @Override
