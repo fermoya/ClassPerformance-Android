@@ -64,9 +64,7 @@ public class FirebaseDBManager {
                     FirebaseObservable result = responseClass.newInstance();
                     result.initialize(value);
                     results.add(result);
-                } catch (Exception exception) {
-                    Log.d("","");
-                }
+                } catch (Exception exception) { }
             }
 
             return results;

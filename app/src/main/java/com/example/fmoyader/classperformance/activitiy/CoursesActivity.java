@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -59,10 +60,20 @@ public class CoursesActivity extends AppCompatActivity implements CoursesContrac
 
         coursesAdapter = new CoursesRecyclerViewAdapter(this);
         coursesRecylyerView.setAdapter(coursesAdapter);
-        coursesRecylyerView.setLayoutManager(new GridLayoutManager(this, 2));
+        coursesRecylyerView.setLayoutManager(new GridLayoutManager(this, numberOfColumns()));
 
         presenter = new CoursesPresenter(this, this);
         presenter.onCreate();
+    }
+
+    private int numberOfColumns() {
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int widthDivider = 400;
+        int width = displayMetrics.widthPixels;
+        int nColumns = width / widthDivider;
+        if (nColumns < 2) return 2;
+        return nColumns;
     }
 
     public void addNewCourse(View view) {
