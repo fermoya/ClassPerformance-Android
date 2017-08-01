@@ -31,7 +31,7 @@ public class AddNewCourseActivity extends ShowErrorActivity implements AddNewCou
         ButterKnife.bind(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        presenter = new AddNewCoursePresenter(this);
+        presenter = new AddNewCoursePresenter(this, this);
     }
 
     public void addNewCourse(View view) {
@@ -49,11 +49,7 @@ public class AddNewCourseActivity extends ShowErrorActivity implements AddNewCou
     }
 
     @Override
-    public void onReturnResult() {
-        if (data != null) {
-            data.putExtra(CoursesActivity.COURSE_NAME_EXTRA, getCourseName());
-            data.putExtra(CoursesActivity.COURSE_DESCRIPTION_EXTRA, getCourseDescripton());
-            setResult(Activity.RESULT_OK, data);
-        }
+    public void onFinish() {
+        finish();
     }
 }

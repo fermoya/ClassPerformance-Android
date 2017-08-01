@@ -34,12 +34,12 @@ public class FirebaseDBManager {
         observers.add(observer);
     }
 
-    public void query(String where, String value, final Class<? extends FirebaseObservable> responseClass) {
+    public <T extends FirebaseObservable> void query(String where, String value, final Class<T> responseClass) {
         Query query = reference.orderByChild(where).equalTo(value);
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                List<FirebaseObservable> results = mapResponse(dataSnapshot, responseClass);
+                List<T> results = mapResponse(dataSnapshot, responseClass);
                 post(results);
             }
 
@@ -50,18 +50,18 @@ public class FirebaseDBManager {
         });
     }
 
-    private void post(List<FirebaseObservable> results) {
+    private <T extends FirebaseObservable> void post(List<T> results) {
         for (FirebaseObserver observer : observers) {
             observer.onResult(results);
         }
     }
 
-    private List<FirebaseObservable> mapResponse(DataSnapshot dataSnapshot, Class<? extends FirebaseObservable> responseClass) {
+    private <T extends FirebaseObservable> List<T> mapResponse(DataSnapshot dataSnapshot, Class<T> responseClass) {
         if (dataSnapshot.exists()) {
-            List<FirebaseObservable> results = new ArrayList<>();
+            List<T> results = new ArrayList<>();
             for (DataSnapshot value : dataSnapshot.getChildren()) {
                 try {
-                    FirebaseObservable result = responseClass.newInstance();
+                    T result = responseClass.newInstance();
                     result.initialize(value);
                     results.add(result);
                 } catch (Exception exception) { }
@@ -71,5 +71,9 @@ public class FirebaseDBManager {
         }
 
         return null;
+    }
+
+    public <T extends FirebaseObservable> void save(T t) {
+        reference.child(t.getChildName()).setValue(t);
     }
 }

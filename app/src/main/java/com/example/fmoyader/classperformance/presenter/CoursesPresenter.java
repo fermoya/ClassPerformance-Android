@@ -27,7 +27,7 @@ import java.util.List;
  * Created by fmoyader on 26/7/17.
  */
 
-public class CoursesPresenter implements CoursesContract.Presenter, AuthProcessListener, FirebaseObserver {
+public class CoursesPresenter implements CoursesContract.Presenter, AuthProcessListener, FirebaseObserver<Course> {
 
     private final Context context;
     private CoursesContract.View coursesView;
@@ -102,21 +102,14 @@ public class CoursesPresenter implements CoursesContract.Presenter, AuthProcessL
     public void onLogInCancel() { }
 
     @Override
-    public void onResult(List<FirebaseObservable> results) {
-        List<Course> courses = new ArrayList<>();
-        if (results != null) {
-            for (FirebaseObservable result : results) {
-                if (result != null && result instanceof Course) {
-                    courses.add((Course) result);
-                }
-            }
-        }
-        coursesView.onRefreshList(courses);
+    public void onResult(List<Course> results) {
+        coursesView.onRefreshList(results);
 
-        if (!courses.isEmpty()) {
+        if (results != null && !results.isEmpty()) {
             coursesView.onShowCoursesList();
         } else {
             coursesView.onShowEmptyState();
         }
+
     }
 }

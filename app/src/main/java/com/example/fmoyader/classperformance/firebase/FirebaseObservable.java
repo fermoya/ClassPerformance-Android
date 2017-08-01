@@ -10,5 +10,6 @@ import java.util.Map;
 
 public interface FirebaseObservable {
     Map<String, Object> toMap();
+    String getChildName();
     void initialize(DataSnapshot dataSnapshot);
 }

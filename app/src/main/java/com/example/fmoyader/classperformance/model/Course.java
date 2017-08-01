@@ -58,4 +58,9 @@ public class Course implements FirebaseObservable {
     public void setUser(String user) {
         this.user = user;
     }
+
+    @Override
+    public String getChildName() {
+        return name;
+    }
 }

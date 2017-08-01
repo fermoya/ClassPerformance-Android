@@ -14,6 +14,6 @@ public interface AddNewCourseContract {
     interface View extends ErrorAlertDisplay{
         String getCourseName();
         String getCourseDescripton();
-        void onReturnResult();
+        void onFinish();
     }
 }

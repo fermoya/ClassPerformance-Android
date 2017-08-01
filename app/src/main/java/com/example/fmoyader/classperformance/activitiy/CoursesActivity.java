@@ -105,7 +105,7 @@ public class CoursesActivity extends AppCompatActivity implements CoursesContrac
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         presenter.onLogOut();
-                        // CoursesActivity.this.finish();
+                        // CoursesActivity.this.onFinish();
                         Intent intentToLogInActivity = new Intent(CoursesActivity.this, LogInActivity.class);
                         startActivity(intentToLogInActivity);
                     }
