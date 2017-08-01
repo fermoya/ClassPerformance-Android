@@ -3,6 +3,7 @@ package com.example.fmoyader.classperformance.activitiy;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 
@@ -34,6 +35,20 @@ public class LogInActivity extends SpinnerActivity implements LogInContract.View
         if (presenter != null) {
             presenter.onLogInWithFacebook();
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            presenter.onBackPressed();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onBackPressed() {
+        presenter.onBackPressed();
     }
 
     public void onLogInWithTwitter(View v) {
@@ -81,11 +96,6 @@ public class LogInActivity extends SpinnerActivity implements LogInContract.View
                 .setMessage(errorMessage)
                 .setPositiveButton(R.string.alert_dialog_error_positive_button, null)
                 .show();
-    }
-
-    @Override
-    public void onStartActivityForResult(Intent intent, int requestCode) {
-        startActivityForResult(intent, requestCode);
     }
 
     @Override

@@ -18,10 +18,10 @@ public interface LogInContract {
         void onCreate();
         void onLogInWithEmail();
         void onSignUpWithEmail();
+        void onBackPressed();
     }
 
     interface View extends Spinnable, ErrorAlertDisplay {
-        void onStartActivityForResult(Intent intent, int requestCode);
         void onStartActivity(Intent intent);
         boolean dataIsNotEmpty();
         String getEmail();

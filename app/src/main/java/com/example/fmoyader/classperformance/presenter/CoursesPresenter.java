@@ -104,14 +104,16 @@ public class CoursesPresenter implements CoursesContract.Presenter, AuthProcessL
     @Override
     public void onResult(List<FirebaseObservable> results) {
         List<Course> courses = new ArrayList<>();
-        for (FirebaseObservable result : results) {
-            if (result != null && result instanceof Course) {
-                courses.add((Course) result);
+        if (results != null) {
+            for (FirebaseObservable result : results) {
+                if (result != null && result instanceof Course) {
+                    courses.add((Course) result);
+                }
             }
         }
         coursesView.onRefreshList(courses);
 
-        if (courses != null && !courses.isEmpty()) {
+        if (!courses.isEmpty()) {
             coursesView.onShowCoursesList();
         } else {
             coursesView.onShowEmptyState();

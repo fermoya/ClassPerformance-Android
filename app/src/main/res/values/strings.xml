@@ -35,5 +35,8 @@
     <string name="edit_text_course_name">Name</string>
     <string name="edit_text_course_description">Description</string>
     <string name="button_add_course">Add Course</string>
+    <string name="twitter_button_text">Log in with Twitter</string>
+    <string name="facebook_button_text">Log in with Facebook</string>
+    <string name="google_login_button_text">Log in with Google</string>
 
 </resources>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 
+import com.example.fmoyader.classperformance.R;
 import com.example.fmoyader.classperformance.activitiy.CoursesActivity;
 import com.example.fmoyader.classperformance.activitiy.LogInActivity;
 import com.example.fmoyader.classperformance.activitiy.SignUpActivity;
@@ -63,13 +64,16 @@ public class LogInPresenter implements LogInContract.Presenter, GoogleApiClient.
 
     @Override
     public void onLogInWithEmail() {
-        //TODO: AuthManager Email
         logInView.onStartLoader();
         if (logInView.dataIsNotEmpty()) {
             String email = logInView.getEmail();
             String password = logInView.getPassword();
             authManager = new EmailAuthManager(context, this, email, password, (LogInActivity) logInView);
             authManager.logIn();
+        } else {
+            String errorMessage = context.getString(R.string.error_invalid_data);
+            logInView.onShowError(errorMessage);
+            logInView.onStopLoader();
         }
     }
 
@@ -106,5 +110,13 @@ public class LogInPresenter implements LogInContract.Presenter, GoogleApiClient.
     @Override
     public void onLogInCancel() {
         logInView.onStopLoader();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        logInView.onStartActivity(intent);
     }
 }

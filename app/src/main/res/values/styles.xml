@@ -8,11 +8,22 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="ClasPerformanceTheme">
+    <style name="ClassPerformanceTheme">
         <item name="android:paddingStart">@dimen/standard_margin</item>
         <item name="android:paddingLeft">@dimen/standard_margin</item>
         <item name="android:paddingEnd">@dimen/standard_margin</item>
         <item name="android:paddingRight">@dimen/standard_margin</item>
+    </style>
+
+    <style name="SocialNetworkLongButton">
+        <item name="android:layout_marginTop">@dimen/standard_margin</item>
+        <item name="android:layout_marginBottom">@dimen/standard_margin</item>
+        <item name="android:paddingStart">@dimen/standard_margin</item>
+        <item name="android:paddingEnd">@dimen/standard_margin</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_width">@dimen/dp_unespecified</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
 </resources>

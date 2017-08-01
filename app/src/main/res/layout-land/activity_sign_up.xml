@@ -8,19 +8,33 @@
     style="@style/ClassPerformanceTheme">
 
     <android.support.constraint.Guideline
-        android:id="@+id/guideline_horizontal_half"
+        android:id="@+id/guideline_vertical_left_margin"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_horizontal_half"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5"/>
 
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_vertical_right_margin"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+
     <FrameLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/guideline_horizontal_half"
         app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_half"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintStart_toStartOf="@id/guideline_vertical_left_margin"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_right_margin">
 
         <include layout="@layout/signup_email_panel"/>
 

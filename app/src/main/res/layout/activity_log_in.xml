@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.fmoyader.classperformance.activitiy.LogInActivity"
-    style="@style/ClasPerformanceTheme">
+    style="@style/ClassPerformanceTheme">
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
@@ -73,44 +73,17 @@
         app:layout_constraintBottom_toBottomOf="@+id/image_view_facebook"
         app:layout_constraintLeft_toLeftOf="@+id/guideline_vertical_two_thirds" />
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="@dimen/dp_unespecified"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_third"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="0dp">
 
-        <EditText
-            android:id="@+id/edit_text_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:hint="@string/edit_text_email_hint"/>
+        <include layout="@layout/login_email_panel" />
 
-        <EditText
-            android:id="@+id/edit_text_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="@string/edit_text_password_hint" />
-
-        <Button
-            android:id="@+id/button_log_in"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onLogInWithEmail"
-            android:text="@string/button_login_text"/>
-
-        <Button
-            android:id="@+id/button_sign_up"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onSignUpWithEmail"
-            android:text="@string/button_sign_up_text"/>
-
-    </LinearLayout>
+    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
